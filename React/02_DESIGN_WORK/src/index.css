@@ -1,5 +1,4 @@
-@ import tailwindcss();           // addded import tailwindcss();
-
+@import "tailwindcss";   
 :root {
   --text: #6b6375;
   --text-h: #08060d;
@@ -72,7 +71,6 @@ h1,
 h2 {
   font-family: var(--heading);
   font-weight: 500;
-  color: var(--text-h);
 }
 
 h1 {
