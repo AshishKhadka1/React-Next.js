@@ -1,20 +1,22 @@
-import {useState} from "react";
+import { useState } from "react";
 
 import "./App.css";
 
 export default function App() {
-  const[] = useState(0);
+  const [count, setCount] = useState(0);
+  // count = count + 1;     Don't use this
+
   return (
     <>
       <div className="container">
         <h1>Counter</h1>
 
-        <div className="card">Count is 20</div>
+        <div className="card">Count is {count}</div>
 
         <div className="buttons">
-          <button>Increase</button>
-          <button>Decrease</button>
-          <button>Reset</button>
+          <button onClick={() => setCount(4)}>Increase</button>
+          <button onClick={() => {}}>Decrease</button>
+          <button onClick={() => {}}>Reset</button>
         </div>
 
         <div className="input-group">
