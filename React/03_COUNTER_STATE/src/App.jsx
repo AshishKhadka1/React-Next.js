@@ -6,6 +6,12 @@ export default function App() {
   const [count, setCount] = useState(0);
   // count = count + 1;     Don't use this
 
+  // const incrementHandler = (numVal) => {
+  //   // setCount(numVal + 1);  Short hand notation
+  //   setCount((prev) => prev + numVal + 1);
+  //   setCount((prev) => prev + 1);
+  // }
+
   return (
     <>
       <div className="container">
@@ -14,7 +20,7 @@ export default function App() {
         <div className="card">Count is {count}</div>
 
         <div className="buttons">
-          <button onClick={() => setCount(4)}>Increase</button>
+          <button onClick={() => setCount(count + 1)}>Increase</button>
           <button onClick={() => {}}>Decrease</button>
           <button onClick={() => {}}>Reset</button>
         </div>
