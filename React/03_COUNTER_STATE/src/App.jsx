@@ -4,6 +4,7 @@ import "./App.css";
 
 export default function App() {
   const [count, setCount] = useState(0);
+  const [countToSet, setCountToSet] = useState(0);
   // count = count + 1;     Don't use this
 
   // const incrementHandler = (numVal) => {
@@ -21,13 +22,24 @@ export default function App() {
 
         <div className="buttons">
           <button onClick={() => setCount(count + 1)}>Increase</button>
-          <button onClick={() => {}}>Decrease</button>
-          <button onClick={() => {}}>Reset</button>
+          <button onClick={() => setCount((count) => Math.max(count - 1, 0))}>
+            Decrease
+          </button>
+          <button onClick={() => setCount((count) => 0)}>Reset</button>
         </div>
 
         <div className="input-group">
-          <input type="text" value="8" onChange={() => {}} />
-          <button>Set to 8</button>
+          <input
+            type="text"
+            value="{countToSet}"
+            onChange={(e) => setCountToSet(Number(e.target.value))}
+          />
+          <button
+          onClick = {() => {setCount(Number(countToSet))
+          setCountToSet(0);
+
+          }}
+          >Set to {countToSet}</button>
         </div>
       </div>
     </>
