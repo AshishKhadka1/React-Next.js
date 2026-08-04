@@ -1,21 +1,21 @@
-import {useState} from "react";
+import { useState } from "react";
 import "./App.css";
 import QueueForm from "./components/QueueForm";
 
 export default function App() {
   const [queue, setQueue] = useState([]);
 
-const addToQueue = (customer) => {
-  // Add data to the queue
-}
+  const addToQueue = (customer) => {
+    setQueue([...queue, { ...customer, id: Date.now(), status: "Waiting" }]);
+  };
 
-const updateStatus = (id, newStatus) => {
-  // Change the data in queue based on the id and newStatus
-}
+  const updateStatus = (id, newStatus) => {
+    // Change the data in queue based on the id and newStatus
+  };
 
-const removeFromQueue = (id) => {
-  // Remove data from the queue based on the id
-}
+  const removeFromQueue = (id) => {
+    // Remove data from the queue based on the id
+  };
 
   return (
     <div>
@@ -27,7 +27,6 @@ const removeFromQueue = (id) => {
         <QueueForm onAdd={addToQueue} />
         <h1>Queue Display</h1>
       </main>
-      
     </div>
   );
 }
